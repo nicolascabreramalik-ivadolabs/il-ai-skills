@@ -1,0 +1,15 @@
+# Sensitive Data
+docs/raw/
+*.pdf
+*.docx
+.env
+
+# MacOS files
+.DS_Store
+
+# Claude/IDE configs
+.claude/local_settings.venv/
+.env
+
+# Generated AI outputs
+output/

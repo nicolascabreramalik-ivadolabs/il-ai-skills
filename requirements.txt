@@ -1,0 +1,13 @@
+# Anthropic SDK for Claude access
+anthropic>=0.40.0
+
+# Document Parsing (for your project archives)
+pypdf          # To read PDF project plans
+python-docx    # To read Word documents
+pandas         # To handle any CSV/Excel data
+
+# Statistical Analysis
+scipy>=1.15.0  # Added for t-tests and p-value calculations
+
+# Environment & Security
+python-dotenv  # To securely load your API key later
