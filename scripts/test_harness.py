@@ -32,7 +32,7 @@ def write_csv(filename, rows):
 
 
 def normal_sample(mean, std, n):
-    """Box-Muller transform — no numpy needed."""
+    """Box-Muller transform."""
     import math
     samples = []
     while len(samples) < n:
