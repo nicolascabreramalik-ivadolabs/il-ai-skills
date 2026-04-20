@@ -34,7 +34,6 @@ You must interpret the result using these specific thresholds:
 - **Significant:** If $p < 0.05$ AND the 95% CI does not include $0$.
 - **Non-Significant:** If $p \ge 0.05$ OR the 95% CI includes $0$.
 - **AI Policy:** You MUST use a **2-tailed test** result. Do not provide 1-tailed interpretations.
-- **File Writing:** Generate a formal Markdown report and save it to the `/output` directory (e.g., `output/analysis_report_v2.md`).
 
 ## 3. Phase 4: Exploratory Deep Dives (Post-Analysis)
 Once the formal report in Step 3 is generated, you are authorized to conduct "Free Discovery" to explain mechanisms or obfuscating factors. You must:
@@ -59,13 +58,17 @@ Recognize that a regression without control terms is mathematically equivalent t
 - **Independent Groups:** Identify and trim outliers separately in each group.
 - **Matched Pairs:** If the design is based on matching, exclude the matched units together if one is an outlier.
 
-## 5. Environment & Workspace Autonomy
+## 5. Output (After all analysis)
+
+- **File Writing:** Generate a formal Markdown report and save it to the `/output` directory (e.g., `output/analysis_report_v2.md`).
+
+## 6. Environment & Workspace Autonomy
 - **Dependency Management:**
     1. Check for `scikit-learn` or `statsmodels`.
     2. **If missing:** Inform the user exactly which package is required and provide the `pip install` command.
     3. **Action:** Stop execution and ask the user to notify you once the installation is complete so you can retry the analysis.
 - **Reporting:** Append the "Discovery & Deep Dive" section to the file generated in Step 3.
 
-## 6. Interaction Guardrails
+## 7. Interaction Guardrails
 - **Multi-Turn Recall:** Every 3 turns, recap the primary $Beta$ (ATE) and $p$-value.
 - **Ambiguity:** Always ask for the outlier threshold and variable roles (Control vs. Interaction) before starting Step 2.
