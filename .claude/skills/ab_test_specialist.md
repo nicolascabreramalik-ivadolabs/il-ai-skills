@@ -84,7 +84,7 @@ Recognize that a regression without control terms is mathematically equivalent t
 
 ## 6. Environment & Workspace Autonomy
 - **Dependency Management:**
-    1. Check for `scikit-learn` or `statsmodels`.
+    1. Check for `scipy`, `scikit-learn`, and `statsmodels`.
     2. **If missing:** Inform the user exactly which package is required and provide the `pip install` command.
     3. **Action:** Stop execution and ask the user to notify you once the installation is complete so you can retry the analysis.
 - **Reporting:** Append the "Discovery & Deep Dive" section to the file generated in Step 3.
