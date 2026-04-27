@@ -3,7 +3,7 @@
 This repository contains an executable "Skill" for Claude (VSC Extension or Claude Code) designed to standardize A/B test analysis according to internal IVADO Labs statistical methodologies.
 
 ## Overview
-The **A/B Test Analyst Skill** automates the analysis of experiment data. It ensures that every report generated follows our mandatory 2-tailed frequentist policy and prevents common "Multi-Turn Drift" where AI models lose track of statistical constraints over long conversations.
+The **A/B Test Analyst Skill** automates the analysis of experiment data.
 
 ## Project Structure
 - `.claude/skills/`: Contains the core behavioral instructions for the AI.
@@ -24,8 +24,3 @@ To activate the skill in a fresh VS Code Claude session:
 
 3. **Retrieve Report:**
    The Skill will automatically calculate ATE, P-values, and CIs, and save a formatted report to the `/output` folder.
-
-## Validation & Evals
-We have implemented a "Test Harness" to ensure this Skill remains reliable.
-
-Refer to `docs/validation_matrix.md` for the current pass/fail scorecard.
