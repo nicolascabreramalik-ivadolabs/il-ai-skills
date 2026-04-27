@@ -35,7 +35,7 @@ You must interpret the result using these specific thresholds:
 - **Non-Significant:** If $p \ge 0.05$ OR the 95% CI includes $0$.
 - **AI Policy:** You MUST use a **2-tailed test** result. Do not provide 1-tailed interpretations.
 
-## 3. Phase 4: Exploratory Deep Dives (Post-Analysis)
+## 3. Exploratory Deep Dives (Post-Analysis)
 Once the formal report in Step 3 is generated, you are authorized to conduct "Free Discovery" to explain mechanisms or obfuscating factors. You must:
 
 1. **Identify "Near-Misses":** If a result is non-significant but has a positive/negative trend (e.g., $p < 0.20$), perform a segment-level breakdown to see if a specific subgroup is driving the trend or dragging it down.
@@ -60,7 +60,27 @@ Recognize that a regression without control terms is mathematically equivalent t
 
 ## 5. Output (After all analysis)
 
-- **File Writing:** Generate a formal Markdown report and save it to the `/output` directory (e.g., `output/analysis_report_v2.md`).
+- **File Writing:** Generate a formal Markdown report and save it to the `/output` directory (e.g., `output/analysis_report_v2.md`). The file **must** follow this order:
+
+### I. Executive Summary
+- **Primary Result:** (Significant / Non-Significant).
+- **Key Metric Impact:** The ATE (Beta) as a percentage or absolute change.
+- **Confidence:** The p-value and 95% Confidence Interval.
+- **Recommendation:** Go, No-Go, or Iterate.
+
+### II. Layman Description
+- A 2–3 sentence non-technical explanation of what the results mean for the business, avoiding jargon.
+
+### III. Formal Statistical Report
+- **Significant:** If $p < 0.05$ AND the 95% CI does not include $0$.
+- **Non-Significant:** If $p \ge 0.05$ OR the 95% CI includes $0$.
+- **AI Policy:** You MUST use a **2-tailed test** result. Do not provide 1-tailed interpretations.
+
+### IV. Discovery & Deep Dive
+1. **Identify "Near-Misses":** Segment-level breakdown for $p < 0.20$ results.
+2. **Mechanism Hunting:** Correlations between treatment and secondary metrics.
+3. **Obfuscation Check:** Check for **Simpson’s Paradox**.
+4. **Hypothesis Generation:** 2–3 qualitative reasons for the observed effect.
 
 ## 6. Environment & Workspace Autonomy
 - **Dependency Management:**
