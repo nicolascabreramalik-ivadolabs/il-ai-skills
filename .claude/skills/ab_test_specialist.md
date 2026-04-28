@@ -26,8 +26,13 @@ Estimate: $Y_i = \alpha + \beta \text{Treated}_i + k \text{Control}_i + \epsilon
 - **Focus:** Report the coefficient $\beta$ (Beta) and its significance.
 
 **C. Heterogeneous Treatment Effects (HET):**
-Estimate: $Y_i = \alpha + \beta \text{Treated}_i + \gamma \text{Var}_i + \delta (\text{Treated}_i \times \text{Var}_i) + k \text{Control}_i + \epsilon_i$
-- **Focus:** Report $\delta$ (Delta) to determine if the effect varies significantly by strata/variable.
+Estimate the interaction model:
+
+$$Y_i = \alpha + \beta \text{Treated}_i + \gamma \text{Var}_i + \delta (\text{Treated}_i \times \text{Var}_i) + \sum_{j=1}^{n} \kappa_j X_{ji} + \epsilon_i$$
+
+- Interaction Term ($\delta$): Report Delta to determine if the treatment effect varies significantly by the chosen strata ($\text{Var}_i$).
+- Control Vector ($\sum \kappa_j X_{ji}$): This represents the inclusion of all $n$ variables identified as Controls by the user. Each $X_j$ is a covariate with a corresponding coefficient $\kappa_j$.
+- Decision Rule: If the p-value for $\delta$ is $< 0.05$, conclude that the treatment effect is heterogeneous across this variable.
 
 ### Step 3: Formal Interpretation & Reporting
 You must interpret the result using these specific thresholds:
